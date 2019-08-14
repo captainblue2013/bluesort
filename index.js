@@ -1,14 +1,8 @@
-'use strict';
-
-let index = {};
-
-index.quickSort = require('./lib/quickSort');
-
-index.simpleSelection = require('./lib/simpleSelection');
-
-index.insertionSort = require('./lib/insertion');
-
-index.shellSort = require('./lib/shellSort');
-
-module.exports = index;
+module.exports = {
+    quickSort : require('./lib/quickSort'),
+    simpleSelection: require('./lib/simpleSelection'),
+    insertionSort: require('./lib/insertion'),
+    shellSort: require('./lib/shellSort'),
+    heapSort: require('./lib/heapSort'),
+};
 
