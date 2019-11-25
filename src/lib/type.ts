@@ -1,0 +1,1 @@
+export type NumberArray = Array<number>;
