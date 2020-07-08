@@ -1,18 +1,14 @@
-import { NumberArray } from './type';
-
 /**
- * 交换数组指定下标的值
- * @param {数组} arr 
- * @param {下标1} a 
- * @param {下标2} b 
+ * 快速排序
+ * 每次选取一个元素做基准，一般可以选第一个，无所谓的。
+ * 然后遍历，把小于基准的放一组，大于基准的放一组，这时基准元素在中间。
+ * 得到的两组再重复上面的方法，直到无法拆分，整个数组有序。
+ * 一般情况下是  O(nlogn)， 
+ * 最坏情况下是  O(n^2) ，指的是原数组恰好“反有序”，每次分组的时候，两边很不平衡。
  */
-const swap = (arr: NumberArray, a: number, b: number) => {
-  if (arr[a] !== arr[b]) {
-    arr[a] = arr[a] ^ arr[b];
-    arr[b] = arr[a] ^ arr[b];
-    arr[a] = arr[a] ^ arr[b];
-  }
-};
+import { NumberArray } from './type';
+import { swap } from './utils';
+
 
 /**
  * 以数组第一个元素为基准，将小于基准的放到左边，大于基准的放到右边，返回基准值的最后下标

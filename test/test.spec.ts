@@ -1,9 +1,19 @@
 import { assert } from 'chai';
 import { describe, it } from 'mocha';
 
-import { heapSort, insertionSort, quickSort, shellSort, simpleSelectionSort } from '../src';
+import { mergeSort, bubbleSort, heapSort, insertionSort, quickSort, shellSort, simpleSelectionSort } from '../src';
 
 describe('all', () => {
+  it('mergeSort', () => {
+    const arr: Array<number> = [3, 5, 1, 2, 7, 3, 5, 9, 2, 6, 11, 3, 7];
+    const sorted: Array<number> = [1, 2, 2, 3, 3, 3, 5, 5, 6, 7, 7, 9, 11];
+    assert.deepEqual(mergeSort(arr), sorted);
+  });
+  it('bubbleSort', () => {
+    const arr: Array<number> = [3, 5, 1, 2, 7, 3, 5, 9, 2, 6, 11, 3, 7];
+    const sorted: Array<number> = [1, 2, 2, 3, 3, 3, 5, 5, 6, 7, 7, 9, 11];
+    assert.deepEqual(bubbleSort(arr), sorted);
+  });
   it('quickSort', () => {
     const arr: Array<number> = [3, 5, 1, 2, 7, 3, 5, 9, 2, 6, 11, 3, 7];
     const sorted: Array<number> = [1, 2, 2, 3, 3, 3, 5, 5, 6, 7, 7, 9, 11];

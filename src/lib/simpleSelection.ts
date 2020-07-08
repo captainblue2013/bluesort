@@ -1,14 +1,11 @@
+/**
+ * 简单选择排序
+ * i从0位开始，每轮找到数组里最小的一个，让后放在第i位，
+ * 实际需要比较 n+(n-1)...+1次
+ * 大O表达为 O(n^2)
+ */
 import { NumberArray } from './type';
-
-
-const swap = (arr: NumberArray, a: number, b: number) => {
-  if (arr[a] !== arr[b]) {
-    arr[a] = arr[a] ^ arr[b];
-    arr[b] = arr[a] ^ arr[b];
-    arr[a] = arr[a] ^ arr[b];
-  }
-};
-
+import { swap } from './utils';
 
 export const simpleSelectionSort = (arr: NumberArray): NumberArray => {
   for (let i = 0; i < arr.length; i++) {

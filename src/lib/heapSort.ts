@@ -1,10 +1,14 @@
+/**
+ * 堆排序
+ * 第一步是建堆，从末尾插入一个元素，然后跟自己的父节点比较、交换，直到到达堆顶
+ * 第二步，出堆，末尾元素与堆顶交换出堆，然后堆从顶点重排，
+ * 重复上一步，得到一个有序的数组。
+ * 一般来说堆排序是用于长时间维护一个有序结构，比如排行榜
+ * 在反复有新元素进场，而又快速恢复有序的场景，效率很好。
+ * O(nlogn)
+ */
 import { NumberArray } from './type';
-
-const swap = (arr: NumberArray, a: number, b: number) => {
-  let tmp = arr[a];
-  arr[a] = arr[b];
-  arr[b] = tmp;
-};
+import { swap } from './utils';
 
 const rebuildFromTail = (arr: NumberArray, n: number) => {
   if (arr.length == 1) {
